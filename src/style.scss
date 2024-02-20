@@ -1,0 +1,108 @@
+// breakpoints
+@mixin mobile {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+@mixin tablet {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+@mixin laptop {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+// css colors and variables
+:root {
+    --main-bg: rgb(49, 72, 80);
+    --solid-bg: #000;
+    --wallpaper-image: url("../src/wallpaper/dark-theme.jpeg");
+    --primary-color: rgb(25, 26, 26);
+    --button-color: rgb(39, 96, 96);
+    --inverted: white;
+}
+
+[data-theme="light"] {
+    --main-bg: rgb(64, 155, 144);
+    --solid-bg: #fff;
+    --wallpaper-image: url("../src/wallpaper/light-theme.jpg");
+    --primary-color: rgb(103, 149, 146);
+    --button-color: rgb(189, 206, 205);
+    --inverted: #000;
+}
+
+$main-bg: var(--main-bg);
+$solid-bg: var(--solid-bg);
+$wallpaper-image: var(--wallpaper-image);
+$primary-color: var(--primary-color);
+$button-color: var(--button-color);
+$inverted: var(--inverted);
+
+// dark theme button style
+#theme {
+    position: absolute;
+    right: 30px;
+    top: 40px;
+    cursor: pointer;
+
+    width: 60px;
+    height: 34px;
+
+    input {
+        opacity: 0;
+        width: 60px;
+        cursor: pointer;
+        height: 34px;
+
+        z-index: 9;
+        position: absolute;
+
+        &:checked + .slider {
+            background-color: $button-color;
+        }
+
+        &:focus + .slider {
+            box-shadow: 0 0 1px $button-color;
+        }
+        &:checked + .slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+    }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: $main-bg;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+
+        &:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: 0.4s;
+            transition: 0.4s;
+        }
+
+        /* Rounded sliders */
+        &.round {
+            border-radius: 34px;
+            &:before {
+                border-radius: 50%;
+            }
+        }
+    }
+}

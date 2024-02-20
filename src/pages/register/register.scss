@@ -1,0 +1,96 @@
+@import "../../style.scss";
+
+.register {
+    background: radial-gradient($solid-bg, $main-bg);
+    background-color: $solid-bg;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__container {
+        background-color: $main-bg;
+        box-shadow: 0px 0px 10px rgb(12, 12, 12);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+        padding: 20px 60px;
+        border-radius: 10px;
+
+        h2 {
+            color: $inverted;
+        }
+        p {
+            color: $inverted;
+            font-size: 14px;
+        }
+
+        &__header {
+        }
+
+        &__form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+
+            span {
+                color: $inverted;
+            }
+
+            input {
+                padding: 15px;
+                outline: none;
+                border: none;
+                border-radius: 3px;
+                border-bottom: 1px solid rgb(125, 188, 209);
+                background-color: transparent;
+                width: 250px;
+                color: $inverted;
+
+                &::placeholder {
+                    color: $inverted;
+                }
+            }
+
+            label {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                color: $inverted;
+                font-size: 12px;
+                cursor: pointer;
+                img {
+                    width: 32px;
+                    height: 32px;
+                }
+            }
+
+            button {
+                padding: 10px;
+                border: none;
+                background: $button-color;
+                color: $inverted;
+                font-weight: 800;
+                border-radius: 5px;
+                font-size: 16px;
+                cursor: pointer;
+            }
+        }
+        &__footer {
+            span {
+                font-size: 12px;
+                color: $inverted;
+
+                a {
+                    color: $inverted;
+                    &:hover {
+                        color: rgb(60, 239, 255);
+                    }
+                }
+            }
+        }
+    }
+}

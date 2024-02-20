@@ -1,0 +1,24 @@
+@import "../../style.scss";
+
+.search {
+    border-bottom: 1px solid gray;
+
+    &__form {
+        padding: 10px;
+        
+        span{
+            color: $inverted;
+        }
+
+        input {
+            background-color: transparent;
+            border: none;
+            color: $inverted;
+            outline: none;
+
+            &::placeholder {
+                color: $inverted;
+            }
+        }
+    }
+}

@@ -1,0 +1,43 @@
+@import "../../style.scss";
+
+.input {
+    height: 50px;
+    background: $primary-color;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    input {
+        width: 100%;
+        border: none;
+        outline: none;
+        color: $inverted;
+        font-size: 18px;
+        background: $primary-color;
+
+        &::placeholder {
+            color: $inverted;
+        }
+    }
+
+    .send {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        img {
+            height: 24px;
+            cursor: pointer;
+        }
+
+        button {
+            border: none;
+            padding: 10px 15px;
+            color: $inverted;
+            background: $button-color;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    }
+}

@@ -1,0 +1,26 @@
+@import "../../style.scss";
+
+.chat {
+    flex: 2;
+
+    &__info {
+        height: 50px;
+        background-color: rgba($primary-color, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        color: $inverted;
+
+        &__icons {
+            display: flex;
+            gap: 10px;
+
+            img {
+                height: 30px;
+                width: 30px;
+                cursor: pointer;
+            }
+        }
+    }
+}

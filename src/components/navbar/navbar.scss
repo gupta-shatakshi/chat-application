@@ -1,0 +1,50 @@
+@import "../../style.scss";
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: $inverted;
+    background-color: $primary-color;
+    height: 50px;
+    padding: 10px;
+
+    &__logo {
+        font-weight: bold;
+        @include tablet {
+            display: none;
+        }
+    }
+
+    &__user {
+        display: flex;
+        gap: 10px;
+
+        img {
+            background-color: $inverted;
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        span {
+            text-transform: capitalize;
+        }
+
+        button {
+            background: $button-color;
+            color: $inverted;
+            font-size: 12px;
+            border: none;
+            cursor: pointer;
+            padding: 7px;
+            border-radius: 4px;
+
+            @include tablet {
+                position: absolute;
+                bottom: 10px;
+            }
+        }
+    }
+}
